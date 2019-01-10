@@ -1,0 +1,32 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Spikes here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Spikes extends BadGuys
+{
+    /**
+     * Act - do whatever the Spikes wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+       checkKill();
+    }    
+    
+    public void checkKill()
+    {
+        if (canSee(Player.class) )
+        {
+            get(Player.class);
+            //Greenfoot.playSound("game-over.wav");
+
+            Greenfoot.setWorld(new Level01());
+            Player.minusLife();
+            
+        }
+    }
+}
